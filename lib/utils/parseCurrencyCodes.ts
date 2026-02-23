@@ -33,70 +33,70 @@ console.log(
         AWG Aruban Florin Aruba
         AZN Azerbaijani Manat Azerbaijan
         BAM Bosnia and Herzegovina Mark Bosnia and Herzegovina
-        BBD BarbadosdDollardBarbados
-        BDT BangladeshidTakadBangladesh
-        BGN dBulgariandLevdBulgaria
-        BHD dBahrainidDinardBahrain
-        BIF dBurundiandFrancdBurundi
-        BMD dBermudiandDollardBermuda
-        BND dBruneidDollardBrunei
-        BOB dBoliviandBolivianodBolivia
-        BRL dBraziliandRealdBrazil
-        BSD dBahamiandDollardBahamas
-        BTN dBhutanesedNgultrumdBhutan
-        BWP dBotswanadPuladBotswana
-        BYN dBelarusiandRubledBelarus
-        BZD dBelizedDollardBelize
-        CAD dCanadiandDollardCanada
-        CDF dCongolesedFrancdDemocraticdRepublicdofdthedCongo
-        CHF dSwissdFrancdSwitzerland
-        CLF dChileandUnidadddedFomentodChile
-        CLP dChileandPesodChile
-        CNH dOffshoredChinesedRenminbidChina
-        CNY dChinesedRenminbidChina
-        COP dColombiandPesodColombia
-        CRC dCostadRicandColondCostadRica
-        CUP dCubandPesodCuba
-        CVE dCapedVerdeandEscudodCapedVerde
-        CZK CzechdKorunadCzechdRepublic
-        DJF dDjiboutiandFrancdDjibouti
-        DKK dDanishdKronedDenmark
-        DOP dDominicandPesodDominicandRepublic
-        DZD dAlgeriandDinardAlgeria
-        EGP dEgyptiandPounddEgypt
-        ERN dEritreandNakfadEritrea
-        ETB dEthiopiandBirrdEthiopia
-        EUR dEurodEuropeandUnion
-        FJD dFijidDollardFiji
-        FKP dFalklanddIslandsdPounddFalklanddIslands
-        FOK dFaroesedKrónadFaroedIslands
-        GBP dPounddSterlingdUniteddKingdom
-        GEL dGeorgiandLaridGeorgia
-        GGP dGuernseydPounddGuernsey
-        GHS dGhanaiandCedidGhana
-        GIP dGibraltardPounddGibraltar
-        GMD dGambiandDalasidThedGambia
-        GNF dGuineandFrancdGuinea
-        GTQ dGuatemalandQuetzaldGuatemala
-        GYD dGuyanesedDollardGuyana
-        HKD dHongdKongdDollardHongdKong
-        HNL dHondurandLempiradHonduras
-        HRK d CroatiandKunadCroatia
-        HTG dHaitiandGourdedHaiti
-        HUF dHungariandForintdHungary
-        IDR dIndonesiandRupiahdIndonesia
-        ILS dIsraelidNewdShekeldIsrael
-        IMP dManxdPounddIsledofdMan
-        INR dIndiandRupeedIndia
-        IQD dIraqidDinardIraq
-        IRR dIraniandRialdIran
-        ISK dIcelandicdKrónadIceland
-        JEP dJerseydPounddJersey
-        JMD dJamaicandDollardJamaica
-        JOD dJordaniandDinardJordan
-        JPY dJapanesedYendJapan
-        KES dKenyandShillingdKenya
-        KGS dKyrgyzstanidSomdKyrgyzstan
+        BBD Barbados Dollar Barbados
+        BDT Bangladeshi Taka Bangladesh
+        BGN Bulgarian Lev Bulgaria
+        BHD Bahraini Dinar Bahrain
+        BIF Burundian Franc Burundi
+        BMD Bermudian Dollar Bermuda
+        BND Brunei Dollar Brunei
+        BOB Bolivian Boliviano Bolivia
+        BRL Brazilian Real Brazil
+        BSD Bahamian Dollar Bahamas
+        BTN Bhutanese Ngultrum Bhutan
+        BWP Botswana Pula Botswana
+        BYN Belarusian Ruble Belarus
+        BZD Belize Dollar Belize
+        CAD Canadian Dollar Canada
+        CDF Congolese Franc Democratic Republic of the Congo
+        CHF Swiss Franc Switzerland
+        CLF Chilean Unidad de Fomento Chile
+        CLP Chilean Peso Chile
+        CNH Offshore Chinese Renminbi China
+        CNY Chinese Renminbi China
+        COP Colombian Peso Colombia
+        CRC Costa Rican Colon Costa Rica
+        CUP Cuban Peso Cuba
+        CVE Cape Verdean Escudo Cape Verde
+        CZK Czech Koruna Czech Republic
+        DJF Djiboutian Franc Djibouti
+        DKK Danish Krone Denmark
+        DOP Dominican Peso Dominican Republic
+        DZD Algerian Dinar Algeria
+        EGP Egyptian Pound Egypt
+        ERN Eritrean Nakfa Eritrea
+        ETB Ethiopian Birr Ethiopia
+        EUR Euro European Union
+        FJD Fiji Dollar Fiji
+        FKP Falkland Islands Pound Falkland Islands
+        FOK Faroese Króna Faroe Islands
+        GBP Pound Sterling United Kingdom
+        GEL Georgian Lari Georgia
+        GGP Guernsey Pound Guernsey
+        GHS Ghanaian Cedi Ghana
+        GIP Gibraltar Pound Gibraltar
+        GMD Gambian Dalasi The Gambia
+        GNF Guinean Franc Guinea
+        GTQ Guatemalan Quetzal Guatemala
+        GYD Guyanese Dollar Guyana
+        HKD Hong Kong Dollar Hong Kong
+        HNL Honduran Lempira Honduras
+        HRK Croatian Kuna Croatia
+        HTG Haitian Gourde Haiti
+        HUF Hungarian Forint Hungary
+        IDR Indonesian Rupiah Indonesia
+        ILS Israeli New Shekel Israel
+        IMP Manx Pound Isle of Man
+        INR Indian Rupee India
+        IQD Iraqi Dinar Iraq
+        IRR Iranian Rial Iran
+        ISK Icelandic Króna Iceland
+        JEP Jersey Pound Jersey
+        JMD Jamaican Dollar Jamaica
+        JOD Jordanian Dinar Jordan
+        JPY Japanese Yen Japan
+        KES Kenyan Shilling Kenya
+        KGS Kyrgyzstani Som Kyrgyzstan
         KHR Cambodian Riel Cambodia
         KID Kiribati Dollar Kiribati
         KMF Comorian Franc Comoros
