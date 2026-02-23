@@ -1,27 +1,26 @@
-export default function parseCurrencyCodes(messyCurrencyCodeString: string): string {
-    const messyCurrencyCodeArr = messyCurrencyCodeString.split(" ");
-    let currencyCodesUnion = "";
+export default function parseCurrencyCodes(
+	messyCurrencyCodeString: string,
+): string {
+	const messyCurrencyCodeArr = messyCurrencyCodeString.split(" ");
+	let currencyCodesUnion = "";
 
-    // the logic below is not perfect. Words such as "CFP", "CFA", and "UAE" is included, so pick them out by hand.
+	// the logic below is not perfect. Words such as "CFP", "CFA", and "UAE" is included, so pick them out by hand.
 
-    for(const c of messyCurrencyCodeArr) {
-        if(
-            c.length === 3 &&
-            c.toUpperCase() === c
-        ) {
-            if(!currencyCodesUnion.length) {
-                currencyCodesUnion += `"${c}"`;
-            } else {
-                currencyCodesUnion += ` | "${c}"`;
-            }
-        }
-    }
+	for (const c of messyCurrencyCodeArr) {
+		if (c.length === 3 && c.toUpperCase() === c) {
+			if (!currencyCodesUnion.length) {
+				currencyCodesUnion += `"${c}"`;
+			} else {
+				currencyCodesUnion += ` | "${c}"`;
+			}
+		}
+	}
 
-    return currencyCodesUnion;
+	return currencyCodesUnion;
 }
 
 console.log(
-    parseCurrencyCodes(`
+	parseCurrencyCodes(`
         AED UAE Dirham United Arab Emirates
         AFN Afghan Afghani Afghanistan
         ALL Albanian Lek Albania
@@ -185,5 +184,5 @@ console.log(
         ZAR South African Rand South Africa
         ZMW Zambian Kwacha Zambia
         ZWL Zimbabwean Dollar Zimbabwe
-    `)
+    `),
 );
