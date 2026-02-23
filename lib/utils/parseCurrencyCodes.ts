@@ -8,9 +8,9 @@ export default function parseCurrencyCodes(messyCurrencyCodeString: string): str
             c.toUpperCase() === c
         ) {
             if(!currencyCodesUnion.length) {
-                currencyCodesUnion += c;
+                currencyCodesUnion += `"${c}"`;
             } else {
-                currencyCodesUnion += ` | ${c}`;
+                currencyCodesUnion += ` | "${c}"`;
             }
         }
     }
