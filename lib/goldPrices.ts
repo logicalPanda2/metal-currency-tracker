@@ -2,11 +2,11 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-export async function getGoldPriceInUSD(): Promise<PreciousMetalData> {
+export async function getPreciousMetalData(metal: MetalCode, currency: Currency): Promise<PreciousMetalData> {
     try {
         if(!process.env.GOLD_API_KEY) throw new Error("API access key missing in environment variables.");
 
-        const response = await fetch("https://www.goldapi.io/api/XAU/USD", {
+        const response = await fetch(`https://www.goldapi.io/api/${metal}/${currency}`, {
             mode: "cors",
             headers: {
                 "x-access-token": process.env.GOLD_API_KEY,
@@ -29,10 +29,6 @@ export async function getGoldPriceInUSD(): Promise<PreciousMetalData> {
     } catch(e) {
         throw e;
     }
-}
-
-export async function getSilverPriceInUSD() {
-    
 }
 
 const metalCodeToMetalMap: Record<MetalCode, Metal> = {
