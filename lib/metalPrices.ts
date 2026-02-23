@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-export async function getPreciousMetalData(metal: MetalCode, currency: Currency): Promise<PreciousMetalData> {
+export default async function getPreciousMetalData(metal: MetalCode, currency: Currency): Promise<PreciousMetalData> {
     try {
         if(!process.env.GOLD_API_KEY) throw new Error("API access key missing in environment variables.");
 
