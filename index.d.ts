@@ -14,6 +14,10 @@ interface CurrencyExchangePairData {
     
 }
 
+interface CurrencyExchangeData {
+    
+}
+
 interface GoldAPIResponse {
     "timestamp": number,
     "metal": MetalCode,
