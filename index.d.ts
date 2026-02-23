@@ -1,10 +1,10 @@
 type MetalCode = "XAU" | "XAG" | "XPT" | "XPD";
 type Metal = "gold" | "silver" | "platinum" | "palladium";
-type Currency = "USD";
+type GoldAPICurrencyCode = "USD";
 
 interface PreciousMetalData {
     metal: Metal,
-    currency: Currency,
+    currency: GoldAPICurrencyCode,
     troyOuncePrice: number,
     sellingPrice: number,
     buyingPrice: number,
