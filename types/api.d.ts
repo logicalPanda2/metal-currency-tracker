@@ -193,3 +193,7 @@ type ExchangeAPICurrencyCode =
 	| "ZAR"
 	| "ZMW"
 	| "ZWL";
+
+interface ExchangeAPIPairResponse {}
+
+interface ExchangeAPIResponse {}
