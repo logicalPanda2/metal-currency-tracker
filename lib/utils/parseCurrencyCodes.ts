@@ -2,6 +2,8 @@ export default function parseCurrencyCodes(messyCurrencyCodeString: string): str
     const messyCurrencyCodeArr = messyCurrencyCodeString.split(" ");
     let currencyCodesUnion = "";
 
+    // the logic below is not perfect. Words such as "CFP", "CFA", and "UAE" is included, so pick them out by hand.
+
     for(const c of messyCurrencyCodeArr) {
         if(
             c.length === 3 &&
@@ -32,69 +34,69 @@ console.log(
         AZN Azerbaijani Manat Azerbaijan
         BAM Bosnia and Herzegovina Mark Bosnia and Herzegovina
         BBD BarbadosdDollardBarbados
-        BDTdBangladeshidTakadBangladesh
-        BGNdBulgariandLevdBulgaria
-        BHDdBahrainidDinardBahrain
-        BIFdBurundiandFrancdBurundi
-        BMDdBermudiandDollardBermuda
-        BNDdBruneidDollardBrunei
-        BOBdBoliviandBolivianodBolivia
-        BRLdBraziliandRealdBrazil
-        BSDdBahamiandDollardBahamas
-        BTNdBhutanesedNgultrumdBhutan
-        BWPdBotswanadPuladBotswana
-        BYNdBelarusiandRubledBelarus
-        BZDdBelizedDollardBelize
-        CADdCanadiandDollardCanada
-        CDFdCongolesedFrancdDemocraticdRepublicdofdthedCongo
-        CHFdSwissdFrancdSwitzerland
-        CLFdChileandUnidadddedFomentodChile
-        CLPdChileandPesodChile
-        CNHdOffshoredChinesedRenminbidChina
-        CNYdChinesedRenminbidChina
-        COPdColombiandPesodColombia
-        CRCdCostadRicandColondCostadRica
-        CUPdCubandPesodCuba
-        CVEdCapedVerdeandEscudodCapedVerde
-        CZKdCzechdKorunadCzechdRepublic
-        DJFdDjiboutiandFrancdDjibouti
-        DKKdDanishdKronedDenmark
-        DOPdDominicandPesodDominicandRepublic
-        DZDdAlgeriandDinardAlgeria
-        EGPdEgyptiandPounddEgypt
-        ERNdEritreandNakfadEritrea
-        ETBdEthiopiandBirrdEthiopia
-        EURdEurodEuropeandUnion
-        FJDdFijidDollardFiji
-        FKPdFalklanddIslandsdPounddFalklanddIslands
-        FOKdFaroesedKrónadFaroedIslands
-        GBPdPounddSterlingdUniteddKingdom
-        GELdGeorgiandLaridGeorgia
-        GGPdGuernseydPounddGuernsey
-        GHSdGhanaiandCedidGhana
-        GIPdGibraltardPounddGibraltar
-        GMDdGambiandDalasidThedGambia
-        GNFdGuineandFrancdGuinea
-        GTQdGuatemalandQuetzaldGuatemala
-        GYDdGuyanesedDollardGuyana
-        HKDdHongdKongdDollardHongdKong
-        HNLdHondurandLempiradHonduras
-        HRKdCroatiandKunadCroatia
-        HTGdHaitiandGourdedHaiti
-        HUFdHungariandForintdHungary
-        IDRdIndonesiandRupiahdIndonesia
-        ILSdIsraelidNewdShekeldIsrael
-        IMPdManxdPounddIsledofdMan
-        INRdIndiandRupeedIndia
-        IQDdIraqidDinardIraq
-        IRRdIraniandRialdIran
-        ISKdIcelandicdKrónadIceland
-        JEPdJerseydPounddJersey
-        JMDdJamaicandDollardJamaica
-        JODdJordaniandDinardJordan
-        JPYdJapanesedYendJapan
-        KESdKenyandShillingdKenya
-        KGSdKyrgyzstanidSomdKyrgyzstan
+        BDT BangladeshidTakadBangladesh
+        BGN dBulgariandLevdBulgaria
+        BHD dBahrainidDinardBahrain
+        BIF dBurundiandFrancdBurundi
+        BMD dBermudiandDollardBermuda
+        BND dBruneidDollardBrunei
+        BOB dBoliviandBolivianodBolivia
+        BRL dBraziliandRealdBrazil
+        BSD dBahamiandDollardBahamas
+        BTN dBhutanesedNgultrumdBhutan
+        BWP dBotswanadPuladBotswana
+        BYN dBelarusiandRubledBelarus
+        BZD dBelizedDollardBelize
+        CAD dCanadiandDollardCanada
+        CDF dCongolesedFrancdDemocraticdRepublicdofdthedCongo
+        CHF dSwissdFrancdSwitzerland
+        CLF dChileandUnidadddedFomentodChile
+        CLP dChileandPesodChile
+        CNH dOffshoredChinesedRenminbidChina
+        CNY dChinesedRenminbidChina
+        COP dColombiandPesodColombia
+        CRC dCostadRicandColondCostadRica
+        CUP dCubandPesodCuba
+        CVE dCapedVerdeandEscudodCapedVerde
+        CZK CzechdKorunadCzechdRepublic
+        DJF dDjiboutiandFrancdDjibouti
+        DKK dDanishdKronedDenmark
+        DOP dDominicandPesodDominicandRepublic
+        DZD dAlgeriandDinardAlgeria
+        EGP dEgyptiandPounddEgypt
+        ERN dEritreandNakfadEritrea
+        ETB dEthiopiandBirrdEthiopia
+        EUR dEurodEuropeandUnion
+        FJD dFijidDollardFiji
+        FKP dFalklanddIslandsdPounddFalklanddIslands
+        FOK dFaroesedKrónadFaroedIslands
+        GBP dPounddSterlingdUniteddKingdom
+        GEL dGeorgiandLaridGeorgia
+        GGP dGuernseydPounddGuernsey
+        GHS dGhanaiandCedidGhana
+        GIP dGibraltardPounddGibraltar
+        GMD dGambiandDalasidThedGambia
+        GNF dGuineandFrancdGuinea
+        GTQ dGuatemalandQuetzaldGuatemala
+        GYD dGuyanesedDollardGuyana
+        HKD dHongdKongdDollardHongdKong
+        HNL dHondurandLempiradHonduras
+        HRK d CroatiandKunadCroatia
+        HTG dHaitiandGourdedHaiti
+        HUF dHungariandForintdHungary
+        IDR dIndonesiandRupiahdIndonesia
+        ILS dIsraelidNewdShekeldIsrael
+        IMP dManxdPounddIsledofdMan
+        INR dIndiandRupeedIndia
+        IQD dIraqidDinardIraq
+        IRR dIraniandRialdIran
+        ISK dIcelandicdKrónadIceland
+        JEP dJerseydPounddJersey
+        JMD dJamaicandDollardJamaica
+        JOD dJordaniandDinardJordan
+        JPY dJapanesedYendJapan
+        KES dKenyandShillingdKenya
+        KGS dKyrgyzstanidSomdKyrgyzstan
         KHR Cambodian Riel Cambodia
         KID Kiribati Dollar Kiribati
         KMF Comorian Franc Comoros
