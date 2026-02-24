@@ -32,9 +32,9 @@ export default function ClientHome({ data }: {
         .toLowerCase()
         .slice(1); // capitalize the first letter, concatenate subsequent lowercase characters
     const currency = data.metalData.currency;
-    const sellPrice = `$${data.metalData.sellingPrice.toFixed(2)} ${currency}`;
-    const buyPrice = `$${data.metalData.buyingPrice.toFixed(2)} ${currency}`;
-    const troyOuncePrice = `$${data.metalData.troyOuncePrice.toFixed(2)} ${currency}`;
+    const sellPrice = `$${Number(data.metalData.sellingPrice.toFixed(2)).toLocaleString()} ${currency}`;
+    const buyPrice = `$${Number(data.metalData.buyingPrice.toFixed(2)).toLocaleString()} ${currency}`;
+    const troyOuncePrice = `$${Number(data.metalData.troyOuncePrice.toFixed(2)).toLocaleString()} ${currency}`;
 
     const baseCurrency = data.currencyExchangePairData.base;
     const targetCurrency = data.currencyExchangePairData.target;
@@ -42,9 +42,9 @@ export default function ClientHome({ data }: {
     const aggregate = `1 ${baseCurrency} = ${conversionRate.toFixed(2)} ${targetCurrency}`;
     const reversedBaseAggregate = `1 ${targetCurrency} = ${(1 / conversionRate).toFixed(2)} ${baseCurrency}`;
     
-    const targetSellPrice = `${(data.metalData.sellingPrice * conversionRate).toFixed(2)} ${targetCurrency}`;
-    const targetBuyPrice = `${(data.metalData.buyingPrice * conversionRate).toFixed(2)} ${targetCurrency}`;
-    const targetTroyOuncePrice = `${(data.metalData.troyOuncePrice * conversionRate).toFixed(2)} ${targetCurrency}`;
+    const targetSellPrice = `${Number((data.metalData.sellingPrice * conversionRate).toFixed(2)).toLocaleString()} ${targetCurrency}`;
+    const targetBuyPrice = `${Number((data.metalData.buyingPrice * conversionRate).toFixed(2)).toLocaleString()} ${targetCurrency}`;
+    const targetTroyOuncePrice = `${Number((data.metalData.troyOuncePrice * conversionRate).toFixed(2)).toLocaleString()} ${targetCurrency}`;
 
 	return (<>
         <header className="p-8">
