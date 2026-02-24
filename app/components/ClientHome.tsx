@@ -90,6 +90,7 @@ export default function ClientHome({ data }: {
                             value={base}
                             onChange={(e) => setBase(e.target.value)}
                             className="mx-1 py-1 px-2 border rounded mt-1"
+                            autoComplete="false"
                         />
                     </div>
                     <button 
@@ -109,6 +110,7 @@ export default function ClientHome({ data }: {
                             value={target}
                             onChange={(e) => setTarget(e.target.value)}
                             className="mx-1 py-1 px-2 border rounded mt-1"
+                            autoComplete="false"
                         />
                     </div>
                     <button 
