@@ -8,6 +8,13 @@ interface PreciousMetalData {
 	buyingPrice: number;
 }
 
-interface CurrencyExchangePairData {}
+interface CurrencyExchangePairData {
+    base: CurrencyAPICurrencyCode;
+    target: CurrencyAPICurrencyCode;
+    rate: number;
+}
 
-interface CurrencyExchangeData {}
+interface CurrencyExchangeData {
+    base: CurrencyAPICurrencyCode;
+    rates: Record<CurrencyAPICurrencyCode, number>;
+}
