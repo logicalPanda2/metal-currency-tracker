@@ -10,8 +10,8 @@ export default async function Home({ searchParams }: {
 }) {
     const params = await searchParams;
     const metalCode = (params.metal ?? "XAU") as PreciousMetalAPIMetalCode;
-    const baseCurrencyCode = (params.base ?? "IDR") as CurrencyAPICurrencyCode;
-    const targetCurrencyCode = (params.target ?? "USD") as CurrencyAPICurrencyCode;
+    const baseCurrencyCode = (params.base ?? "USD") as CurrencyAPICurrencyCode;
+    const targetCurrencyCode = (params.target ?? "IDR") as CurrencyAPICurrencyCode;
 
     const data = await getMetalAndExchangeData(metalCode, baseCurrencyCode, targetCurrencyCode);
     
