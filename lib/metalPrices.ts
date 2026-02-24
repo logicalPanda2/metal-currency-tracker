@@ -3,19 +3,26 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export default async function getPreciousMetalData(
-	metal: GoldAPIMetalCode,
-	currency: GoldAPICurrencyCode,
+	metal: PreciousMetalAPIMetalCode,
+	currency: PreciousMetalAPICurrencyCode,
 ): Promise<PreciousMetalData> {
 	try {
-		if (!process.env.GOLD_API_KEY)
+		if (!process.env.API_KEY_SECRET_1) 
 			throw new Error("API access key missing in environment variables.");
 
+        if(!process.env.API_HEADER_SECRET_1)
+            throw new Error("API authorization header not configured in environment variables.");
+
+        if(!process.env.API_ENDPOINT_1)
+            throw new Error("API not configured in environment variables.");
+
+        const endpoint = process.env.API_ENDPOINT_1;
+
 		const response = await fetch(
-			`https://www.goldapi.io/api/${metal}/${currency}`,
+			endpoint.replace("METAL", metal).replace("CURRENCY", currency),
 			{
-				mode: "cors",
 				headers: {
-					"x-access-token": process.env.GOLD_API_KEY,
+					[`${process.env.API_HEADER_SECRET_1}`]: process.env.API_KEY_SECRET_1,
 				},
 			},
 		);
@@ -23,7 +30,7 @@ export default async function getPreciousMetalData(
 		if (!response.ok)
 			throw new Error(`${response.status} ${response.statusText}`);
 
-		const data: GoldAPIResponse = await response.json();
+		const data: PreciousMetalAPIResponse = await response.json();
 
 		const processed: PreciousMetalData = {
 			metal: metalCodeToMetalMap[data.metal],
@@ -39,9 +46,11 @@ export default async function getPreciousMetalData(
 	}
 }
 
-const metalCodeToMetalMap: Record<GoldAPIMetalCode, Metal> = {
+const metalCodeToMetalMap: Record<PreciousMetalAPIMetalCode, Metal> = {
 	XAU: "gold",
 	XAG: "silver",
 	XPT: "platinum",
 	XPD: "palladium",
 };
+
+console.log(await getPreciousMetalData("XAU", "USD"));
