@@ -52,5 +52,3 @@ const metalCodeToMetalMap: Record<PreciousMetalAPIMetalCode, Metal> = {
 	XPT: "platinum",
 	XPD: "palladium",
 };
-
-console.log(await getPreciousMetalData("XAU", "USD"));
