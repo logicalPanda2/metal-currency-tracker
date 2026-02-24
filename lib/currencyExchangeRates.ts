@@ -39,6 +39,31 @@ export async function getCurrencyExchangePair(
 export async function getCurrencyExchangeAll(
 	base: CurrencyAPICurrencyCode,
 ): Promise<CurrencyExchangeData> {
-	base;
-	throw new Error();
+	try {
+		if (!process.env.API_KEY_SECRET_2)
+			throw new Error("API access key missing in environment variables.");
+
+        if(!process.env.API_ENDPOINT_2A || !process.env.API_ENDPOINT_2B)
+            throw new Error("API not configured in environment variables.");
+
+        const endpoint = process.env.API_ENDPOINT_2B;
+
+		const response = await fetch(
+			endpoint.replace("KEY", process.env.API_KEY_SECRET_2).replace("BASE", base)
+		);
+
+		if (!response.ok)
+			throw new Error(`${response.status} ${response.statusText}`);
+
+		const data: CurrencyAPIResponse = await response.json();
+
+		const processed: CurrencyExchangeData = {
+            base: data.base_code,
+            rates: data.conversion_rates,
+        }
+
+		return processed;
+	} catch (e) {
+		throw e;
+	}
 }
