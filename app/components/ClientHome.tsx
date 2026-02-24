@@ -80,7 +80,7 @@ export default function ClientHome({ data }: {
                         </button>
                     </div>
                 </div>
-                <div className="mt-2 flex flex-nowrap flex-row items-end">
+                <div className="mt-4 flex flex-nowrap flex-row items-end">
                     <div className="flex flex-nowrap flex-col">
                         <label htmlFor="baseInput">BASE: </label>
                         <input
@@ -100,7 +100,7 @@ export default function ClientHome({ data }: {
                         Set
                     </button>
                 </div>
-                <div className="mt-2 flex flex-nowrap flex-row items-end">
+                <div className="mt-4 flex flex-nowrap flex-row items-end">
                     <div className="flex flex-nowrap flex-col">
                         <label htmlFor="targetInput">TARGET: </label>
                         <input
@@ -125,10 +125,22 @@ export default function ClientHome({ data }: {
                 <header>
                     <h2 className="text-2xl mb-4">Data</h2>
                 </header>
-                <p>{metal}</p>
-                <p>{troyOuncePrice}</p>
-                <p>{sellPrice}</p>
-                <p>{buyPrice}</p>
+                <p className="text-xl mb-2">{metal} Prices</p>
+                <div className="flex flex-wrap flex-row gap-2 md:gap-4 mb-4">
+                    <div className="p-4 rounded border inline-block">
+                        <p className="text-2xl mb-0.5">{troyOuncePrice}</p>
+                        <p className="text-neutral-900">/ oz t</p>
+                    </div>
+                    <div className="p-4 rounded border inline-block">
+                        <p className="text-2xl mb-0.5">{sellPrice}</p>
+                        <p className="text-neutral-900">Sell price</p>
+                    </div>
+                    <div className="p-4 rounded border inline-block">
+                        <p className="text-2xl mb-0.5">{buyPrice}</p>
+                        <p className="text-neutral-900">Buy price</p>
+                    </div>
+                </div>
+                <p className="text-xl">Exchange Rates</p>
                 <p>{aggregate}</p>
             </section>
         </main>
