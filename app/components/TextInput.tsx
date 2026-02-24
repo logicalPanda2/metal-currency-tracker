@@ -1,4 +1,4 @@
-export default function TextInput({name, id, value, onChange}: TextInputProps) {
+export default function TextInput({name, id, value, onChange, styles}: TextInputProps) {
     return (
         <input
             type="text"
@@ -6,7 +6,7 @@ export default function TextInput({name, id, value, onChange}: TextInputProps) {
             id={id}
             value={value}
             onChange={onChange}
-            className="py-1 px-2 border rounded mt-1"
+            className={`py-1 px-2 border rounded ${styles}`}
             autoComplete="false"
         />
     );
