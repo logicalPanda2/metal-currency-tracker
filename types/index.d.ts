@@ -18,3 +18,9 @@ interface CurrencyExchangeData {
 	base: CurrencyAPICurrencyCode;
 	rates: Record<CurrencyAPICurrencyCode, number>;
 }
+
+interface MetalAndExchangeData {
+    metalData: PreciousMetalData,
+    currencyExchangeData: CurrencyExchangeData,
+    currencyExchangePairData: CurrencyExchangePairData,
+}

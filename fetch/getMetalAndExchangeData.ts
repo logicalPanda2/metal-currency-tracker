@@ -5,11 +5,7 @@ export default async function getMetalAndExchangeData(
     metalCode: PreciousMetalAPIMetalCode,
     base: CurrencyAPICurrencyCode,
     target: CurrencyAPICurrencyCode,
-): Promise<{
-    metalData: Awaited<ReturnType<typeof getPreciousMetalData>>,
-    currencyExchangeData: Awaited<ReturnType<typeof getCurrencyExchangeAll>>,
-    currencyExchangePairData: Awaited<ReturnType<typeof getCurrencyExchangePair>>,
-} | undefined> {
+): Promise<MetalAndExchangeData | undefined> {
     try {
         const metalData = await getPreciousMetalData(metalCode, "USD");
         const currencyExchangeData = await getCurrencyExchangeAll(base);
