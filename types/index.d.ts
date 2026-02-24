@@ -2,7 +2,7 @@ type Metal = "gold" | "silver" | "platinum" | "palladium";
 
 interface PreciousMetalData {
 	metal: Metal;
-	currency: GoldAPICurrencyCode;
+	currency: PreciousMetalAPICurrencyCode;
 	troyOuncePrice: number;
 	sellingPrice: number;
 	buyingPrice: number;
