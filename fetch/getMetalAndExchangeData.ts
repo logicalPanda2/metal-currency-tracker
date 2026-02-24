@@ -1,4 +1,4 @@
-import { getCurrencyExchangeAll, getCurrencyExchangePair } from "@/lib/currencyExchangeRates";
+import { getCurrencyExchangePair } from "@/lib/currencyExchangeRates";
 import getPreciousMetalData from "@/lib/metalPrices";
 
 export default async function getMetalAndExchangeData(
@@ -8,12 +8,10 @@ export default async function getMetalAndExchangeData(
 ): Promise<MetalAndExchangeData | undefined> {
     try {
         const metalData = await getPreciousMetalData(metalCode, "USD");
-        const currencyExchangeData = await getCurrencyExchangeAll(base);
         const currencyExchangePairData = await getCurrencyExchangePair(base, target);
 
         return {
             metalData,
-            currencyExchangeData,
             currencyExchangePairData,
         };
     } catch(e) {

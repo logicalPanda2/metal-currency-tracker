@@ -21,6 +21,5 @@ interface CurrencyExchangeData {
 
 interface MetalAndExchangeData {
     metalData: PreciousMetalData,
-    currencyExchangeData: CurrencyExchangeData,
     currencyExchangePairData: CurrencyExchangePairData,
 }
