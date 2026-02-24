@@ -18,53 +18,102 @@ export default function ClientHome({ data }: {
         router.push(`?${newParams.toString()}`, { scroll: false });
     }
 
+    if(!data) 
+        return <main className="p-8">
+            <h1 className="text-4xl mb-2">An unexpected error occured</h1>
+            <p className="text-xl">View the console for more information</p>
+        </main>;
+
     const metal = 
-        data!.metalData.metal
+        data.metalData.metal
         .split("")
         [0].toUpperCase() + 
-        data!.metalData.metal
+        data.metalData.metal
         .toLowerCase()
         .slice(1); // capitalize the first letter, concatenate subsequent lowercase characters
-    const currency = data!.metalData.currency;
-    const sellPrice = `$${data!.metalData.sellingPrice.toFixed(2)} ${currency}`;
-    const buyPrice = `$${data!.metalData.buyingPrice.toFixed(2)} ${currency}`;
-    const troyOuncePrice = `$${data!.metalData.troyOuncePrice.toFixed(2)} ${currency}`;
+    const currency = data.metalData.currency;
+    const sellPrice = `$${data.metalData.sellingPrice.toFixed(2)} ${currency}`;
+    const buyPrice = `$${data.metalData.buyingPrice.toFixed(2)} ${currency}`;
+    const troyOuncePrice = `$${data.metalData.troyOuncePrice.toFixed(2)} ${currency}`;
 
-    const baseCurrency = data!.currencyExchangePairData.base;
-    const targetCurrency = data!.currencyExchangePairData.target;
-    const conversionRate = data!.currencyExchangePairData.rate;
+    const baseCurrency = data.currencyExchangePairData.base;
+    const targetCurrency = data.currencyExchangePairData.target;
+    const conversionRate = data.currencyExchangePairData.rate;
     const aggregate = `1 ${baseCurrency} = ${conversionRate.toFixed(2)} ${targetCurrency}`;
 
 	return (<>
-        <header>
-            <h1>Gold Price and Currency Exchange Rates</h1>
+        <header className="p-8">
+            <h1 className="text-4xl">Gold Price and Currency Exchange Rates</h1>
         </header>
-        <main>
-            <button onClick={() => setSearchParam("metal", "XAU")}>Gold</button>
-            <button onClick={() => setSearchParam("metal", "XAG")}>Silver</button>
-            <button onClick={() => setSearchParam("metal", "XPT")}>Platinum</button>
-            <button onClick={() => setSearchParam("metal", "XPD")}>Palladium</button>
-            <input 
-                type="text"
-                name="base"
-                id="baseInput"
-                value={base}
-                onChange={(e) => setBase(e.target.value)}
-            />
-            <button onClick={() => setSearchParam("base", base)}>Set Base Currency</button>
-            <input 
-                type="text"
-                name="target"
-                id="targetInput"
-                value={target}
-                onChange={(e) => setTarget(e.target.value)}
-            />
-            <button onClick={() => setSearchParam("target", target)}>Set Target Currency</button>
-            <p>{metal}</p>
+        <main className="px-8">
+            <section className="mb-8">
+                <header>
+                    <h2 className="text-2xl mb-4">Filters</h2>
+                </header>
+                <button 
+                    onClick={() => setSearchParam("metal", "XAU")}
+                    className="px-3 py-1 border rounded mr-1"
+                >
+                    Gold
+                </button>
+                <button 
+                    onClick={() => setSearchParam("metal", "XAG")}
+                    className="px-3 py-1 border rounded mx-1"
+                >
+                    Silver
+                </button>
+                <button 
+                    onClick={() => setSearchParam("metal", "XPT")}
+                    className="px-3 py-1 border rounded mx-1"
+                >
+                    Platinum
+                </button>
+                <button 
+                    onClick={() => setSearchParam("metal", "XPD")}
+                    className="px-3 py-1 border rounded mx-1"
+                >
+                    Palladium
+                </button>
+                <div className="mt-2">
+                    <label htmlFor="baseInput">BASE: </label>
+                    <input
+                        type="text"
+                        name="base"
+                        id="baseInput"
+                        value={base}
+                        onChange={(e) => setBase(e.target.value)}
+                        className="mx-1 py-1 px-2 border rounded"
+                    />
+                    <button 
+                        onClick={() => setSearchParam("base", base)}
+                        className="px-3 py-1 border rounded mx-1"
+                    >
+                        Set
+                    </button>
+                </div>
+                <div className="mt-2">
+                    <label htmlFor="targetInput">TARGET: </label>
+                    <input
+                        type="text"
+                        name="target"
+                        id="targetInput"
+                        value={target}
+                        onChange={(e) => setTarget(e.target.value)}
+                        className="mx-1 py-1 px-2 border rounded"
+                    />
+                    <button 
+                        onClick={() => setSearchParam("target", target)}
+                        className="px-3 py-1 border rounded mx-1"
+                    >
+                        Set
+                    </button>
+                </div>
+            </section>
+            {/* <p>{metal}</p>
             <p>{troyOuncePrice}</p>
             <p>{sellPrice}</p>
             <p>{buyPrice}</p>
-            <p>{aggregate}</p>
+            <p>{aggregate}</p> */}
         </main>
     </>);
 }
