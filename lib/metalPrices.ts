@@ -7,22 +7,25 @@ export default async function getPreciousMetalData(
 	currency: PreciousMetalAPICurrencyCode,
 ): Promise<PreciousMetalData> {
 	try {
-		if (!process.env.API_KEY_SECRET_1) 
+		if (!process.env.API_KEY_SECRET_1)
 			throw new Error("API access key missing in environment variables.");
 
-        if(!process.env.API_HEADER_SECRET_1)
-            throw new Error("API authorization header not configured in environment variables.");
+		if (!process.env.API_HEADER_SECRET_1)
+			throw new Error(
+				"API authorization header not configured in environment variables.",
+			);
 
-        if(!process.env.API_ENDPOINT_1)
-            throw new Error("API not configured in environment variables.");
+		if (!process.env.API_ENDPOINT_1)
+			throw new Error("API not configured in environment variables.");
 
-        const endpoint = process.env.API_ENDPOINT_1;
+		const endpoint = process.env.API_ENDPOINT_1;
 
 		const response = await fetch(
 			endpoint.replace("METAL", metal).replace("CURRENCY", currency),
 			{
 				headers: {
-					[`${process.env.API_HEADER_SECRET_1}`]: process.env.API_KEY_SECRET_1,
+					[`${process.env.API_HEADER_SECRET_1}`]:
+						process.env.API_KEY_SECRET_1,
 				},
 			},
 		);

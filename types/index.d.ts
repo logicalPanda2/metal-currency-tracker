@@ -9,12 +9,12 @@ interface PreciousMetalData {
 }
 
 interface CurrencyExchangePairData {
-    base: CurrencyAPICurrencyCode;
-    target: CurrencyAPICurrencyCode;
-    rate: number;
+	base: CurrencyAPICurrencyCode;
+	target: CurrencyAPICurrencyCode;
+	rate: number;
 }
 
 interface CurrencyExchangeData {
-    base: CurrencyAPICurrencyCode;
-    rates: Record<CurrencyAPICurrencyCode, number>;
+	base: CurrencyAPICurrencyCode;
+	rates: Record<CurrencyAPICurrencyCode, number>;
 }
