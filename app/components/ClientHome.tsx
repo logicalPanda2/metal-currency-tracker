@@ -39,8 +39,8 @@ export default function ClientHome({ data }: {
     const baseCurrency = data.currencyExchangePairData.base;
     const targetCurrency = data.currencyExchangePairData.target;
     const conversionRate = data.currencyExchangePairData.rate;
-    const aggregate = `1 ${baseCurrency} = ${conversionRate.toFixed(2)} ${targetCurrency}`;
-    const reversedBaseAggregate = `1 ${targetCurrency} = ${(1 / conversionRate).toFixed(2)} ${baseCurrency}`;
+    const aggregate = `1 ${baseCurrency} = ${Number(conversionRate.toFixed(2)).toLocaleString()} ${targetCurrency}`;
+    const reversedBaseAggregate = `1 ${targetCurrency} = ${Number((1 / conversionRate).toFixed(2)).toLocaleString()} ${baseCurrency}`;
     
     const targetSellPrice = `${Number((data.metalData.sellingPrice * conversionRate).toFixed(2)).toLocaleString()} ${targetCurrency}`;
     const targetBuyPrice = `${Number((data.metalData.buyingPrice * conversionRate).toFixed(2)).toLocaleString()} ${targetCurrency}`;
