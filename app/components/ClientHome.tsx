@@ -40,6 +40,7 @@ export default function ClientHome({ data }: {
     const targetCurrency = data.currencyExchangePairData.target;
     const conversionRate = data.currencyExchangePairData.rate;
     const aggregate = `1 ${baseCurrency} = ${conversionRate.toFixed(2)} ${targetCurrency}`;
+    const reversedBaseAggregate = `1 ${targetCurrency} = ${(1 / conversionRate).toFixed(2)} ${baseCurrency}`;
 
 	return (<>
         <header className="p-8">
@@ -121,7 +122,7 @@ export default function ClientHome({ data }: {
                     </button>
                 </div>
             </section>
-            <section className="md:w-1/2">
+            <section className="md:w-1/2 pb-8">
                 <header>
                     <h2 className="text-2xl mb-4">Data</h2>
                 </header>
@@ -140,8 +141,10 @@ export default function ClientHome({ data }: {
                         <p className="text-neutral-900">Buy price</p>
                     </div>
                 </div>
-                <p className="text-xl">Exchange Rates</p>
-                <p>{aggregate}</p>
+                <p className="text-xl mb-2">Exchange Rates</p>
+                <p className="text-2xl mb-2">{aggregate}</p>
+                <p className="text-neutral-900 mb-2">and likewise,</p>
+                <p className="text-2xl">{reversedBaseAggregate}</p>
             </section>
         </main>
     </>);
