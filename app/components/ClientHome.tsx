@@ -41,6 +41,10 @@ export default function ClientHome({ data }: {
     const conversionRate = data.currencyExchangePairData.rate;
     const aggregate = `1 ${baseCurrency} = ${conversionRate.toFixed(2)} ${targetCurrency}`;
     const reversedBaseAggregate = `1 ${targetCurrency} = ${(1 / conversionRate).toFixed(2)} ${baseCurrency}`;
+    
+    const targetSellPrice = `${(data.metalData.sellingPrice * conversionRate).toFixed(2)} ${targetCurrency}`;
+    const targetBuyPrice = `${(data.metalData.buyingPrice * conversionRate).toFixed(2)} ${targetCurrency}`;
+    const targetTroyOuncePrice = `${(data.metalData.troyOuncePrice * conversionRate).toFixed(2)} ${targetCurrency}`;
 
 	return (<>
         <header className="p-8">
@@ -139,6 +143,20 @@ export default function ClientHome({ data }: {
                     <div className="p-4 rounded border inline-block">
                         <p className="text-2xl mb-0.5">{buyPrice}</p>
                         <p className="text-neutral-900">Buy price</p>
+                    </div>
+                </div>
+                <div className="flex flex-wrap flex-row gap-2 md:gap-4 mb-4">
+                    <div className="p-4 rounded border inline-block">
+                        <p className="text-2xl mb-0.5">{targetTroyOuncePrice}</p>
+                        <p className="text-neutral-900">Translated / oz t</p>
+                    </div>
+                    <div className="p-4 rounded border inline-block">
+                        <p className="text-2xl mb-0.5">{targetSellPrice}</p>
+                        <p className="text-neutral-900">Translated sell price</p>
+                    </div>
+                    <div className="p-4 rounded border inline-block">
+                        <p className="text-2xl mb-0.5">{targetBuyPrice}</p>
+                        <p className="text-neutral-900">Translated buy price</p>
                     </div>
                 </div>
                 <p className="text-xl mb-2">Exchange Rates</p>
