@@ -2,6 +2,9 @@
 
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState } from "react";
+import Button from "./Button";
+import TextInput from "./TextInput";
+import Card from "./Card";
 
 export default function ClientHome({ data }: {
     data: MetalAndExchangeData | undefined
@@ -59,73 +62,35 @@ export default function ClientHome({ data }: {
                 </header>
                 <div className="flex flex-nowrap flex-col gap-2 md:gap-4 md:flex-row">
                     <div className="flex flex-nowrap flex-row gap-2 md:gap-4">
-                        <button 
-                            onClick={() => setSearchParam("metal", "XAU")}
-                            className="px-3 py-1 border rounded"
-                        >
-                            Gold
-                        </button>
-                        <button 
-                            onClick={() => setSearchParam("metal", "XAG")}
-                            className="px-3 py-1 border rounded"
-                        >
-                            Silver
-                        </button>
+                        <Button onClick={() => setSearchParam("metal", "XAU")} textContent="Gold" />
+                        <Button onClick={() => setSearchParam("metal", "XAG")} textContent="Silver" />
                     </div>
                     <div className="flex flex-nowrap flex-row gap-2 md:gap-4">
-                        <button 
-                            onClick={() => setSearchParam("metal", "XPT")}
-                            className="px-3 py-1 border rounded"
-                        >
-                            Platinum
-                        </button>
-                        <button 
-                            onClick={() => setSearchParam("metal", "XPD")}
-                            className="px-3 py-1 border rounded"
-                        >
-                            Palladium
-                        </button>
+                        <Button onClick={() => setSearchParam("metal", "XPT")} textContent="Platinum" />
+                        <Button onClick={() => setSearchParam("metal", "XPD")} textContent="Palladium" />
                     </div>
                 </div>
                 <div className="mt-4 flex flex-nowrap flex-row items-end">
                     <div className="flex flex-nowrap flex-col">
                         <label htmlFor="baseInput">BASE: </label>
-                        <input
-                            type="text"
-                            name="base"
-                            id="baseInput"
-                            value={base}
-                            onChange={(e) => setBase(e.target.value)}
-                            className="py-1 px-2 border rounded mt-1"
-                            autoComplete="false"
-                        />
+                        <TextInput name="base" id="baseInput" value={base} onChange={(e) => setBase(e.target.value)} styles="mt-1" />
                     </div>
-                    <button 
+                    <Button 
                         onClick={() => setSearchParam("base", base)}
-                        className="px-3 py-1 border rounded mx-2 md:mx-4"
-                    >
-                        Set
-                    </button>
+                        styles="mx-2 md:mx-4"
+                        textContent="Set"
+                    />
                 </div>
                 <div className="mt-4 flex flex-nowrap flex-row items-end">
                     <div className="flex flex-nowrap flex-col">
                         <label htmlFor="targetInput">TARGET: </label>
-                        <input
-                            type="text"
-                            name="target"
-                            id="targetInput"
-                            value={target}
-                            onChange={(e) => setTarget(e.target.value)}
-                            className="py-1 px-2 border rounded mt-1"
-                            autoComplete="false"
-                        />
+                        <TextInput name="target" id="targetInput" value={target} onChange={(e) => setTarget(e.target.value)} styles="mt-1" />
                     </div>
-                    <button 
+                    <Button 
                         onClick={() => setSearchParam("target", target)}
-                        className="px-3 py-1 border rounded mx-2 md:mx-4"
-                    >
-                        Set
-                    </button>
+                        styles="mx-2 md:mx-4"
+                        textContent="Set"
+                    />
                 </div>
             </section>
             <section className="md:w-1/2 pb-8">
@@ -134,40 +99,16 @@ export default function ClientHome({ data }: {
                 </header>
                 <p className="text-xl mb-2">{metal} Prices</p>
                 <div className="flex flex-wrap flex-row gap-2 md:gap-4 mb-4">
-                    <div className="p-4 rounded border inline-block">
-                        <p className="text-2xl mb-0.5">{troyOuncePrice}</p>
-                        <p className="text-neutral-900">/ oz t</p>
-                    </div>
-                    <div className="p-4 rounded border inline-block">
-                        <p className="text-2xl mb-0.5">{sellPrice}</p>
-                        <p className="text-neutral-900">Sell price</p>
-                    </div>
-                    <div className="p-4 rounded border inline-block">
-                        <p className="text-2xl mb-0.5">{buyPrice}</p>
-                        <p className="text-neutral-900">Buy price</p>
-                    </div>
-                    <div className="p-4 rounded border inline-block">
-                        <p className="text-2xl mb-0.5">{gramPrice}</p>
-                        <p className="text-neutral-900">/ gram</p>
-                    </div>
+                    <Card mainText={troyOuncePrice} subText="/ oz t" />
+                    <Card mainText={sellPrice} subText="Sell price" />
+                    <Card mainText={buyPrice} subText="Buy price" />
+                    <Card mainText={gramPrice} subText="/ gram" />
                 </div>
                 <div className="flex flex-wrap flex-row gap-2 md:gap-4 mb-4">
-                    <div className="p-4 rounded border inline-block">
-                        <p className="text-2xl mb-0.5">{targetTroyOuncePrice}</p>
-                        <p className="text-neutral-900">Translated / oz t</p>
-                    </div>
-                    <div className="p-4 rounded border inline-block">
-                        <p className="text-2xl mb-0.5">{targetSellPrice}</p>
-                        <p className="text-neutral-900">Translated sell price</p>
-                    </div>
-                    <div className="p-4 rounded border inline-block">
-                        <p className="text-2xl mb-0.5">{targetBuyPrice}</p>
-                        <p className="text-neutral-900">Translated buy price</p>
-                    </div>
-                    <div className="p-4 rounded border inline-block">
-                        <p className="text-2xl mb-0.5">{targetGramPrice}</p>
-                        <p className="text-neutral-900">Translated / gram</p>
-                    </div>
+                    <Card mainText={targetTroyOuncePrice} subText="Translated / oz t" />
+                    <Card mainText={targetSellPrice} subText="Translated sell price" />
+                    <Card mainText={targetBuyPrice} subText="Translated buy price" />
+                    <Card mainText={targetGramPrice} subText="Translated / gram" />
                 </div>
                 <p className="text-xl mb-2">Exchange Rates</p>
                 <p className="text-2xl mb-2">{aggregate}</p>
