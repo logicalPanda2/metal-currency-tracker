@@ -89,13 +89,13 @@ export default function ClientHome({ data }: {
                             id="baseInput"
                             value={base}
                             onChange={(e) => setBase(e.target.value)}
-                            className="mx-1 py-1 px-2 border rounded mt-1"
+                            className="py-1 px-2 border rounded mt-1"
                             autoComplete="false"
                         />
                     </div>
                     <button 
                         onClick={() => setSearchParam("base", base)}
-                        className="px-3 py-1 border rounded mx-1"
+                        className="px-3 py-1 border rounded mx-2 md:mx-4"
                     >
                         Set
                     </button>
@@ -109,13 +109,13 @@ export default function ClientHome({ data }: {
                             id="targetInput"
                             value={target}
                             onChange={(e) => setTarget(e.target.value)}
-                            className="mx-1 py-1 px-2 border rounded mt-1"
+                            className="py-1 px-2 border rounded mt-1"
                             autoComplete="false"
                         />
                     </div>
                     <button 
                         onClick={() => setSearchParam("target", target)}
-                        className="px-3 py-1 border rounded mx-1"
+                        className="px-3 py-1 border rounded mx-2 md:mx-4"
                     >
                         Set
                     </button>
