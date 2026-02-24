@@ -35,6 +35,7 @@ export default function ClientHome({ data }: {
     const sellPrice = `$${Number(data.metalData.sellingPrice.toFixed(2)).toLocaleString()} ${currency}`;
     const buyPrice = `$${Number(data.metalData.buyingPrice.toFixed(2)).toLocaleString()} ${currency}`;
     const troyOuncePrice = `$${Number(data.metalData.troyOuncePrice.toFixed(2)).toLocaleString()} ${currency}`;
+    const gramPrice = `$${Number((data.metalData.troyOuncePrice / 31.1035).toFixed(2)).toLocaleString()} ${currency}`;
 
     const baseCurrency = data.currencyExchangePairData.base;
     const targetCurrency = data.currencyExchangePairData.target;
@@ -45,6 +46,7 @@ export default function ClientHome({ data }: {
     const targetSellPrice = `${Number((data.metalData.sellingPrice * conversionRate).toFixed(2)).toLocaleString()} ${targetCurrency}`;
     const targetBuyPrice = `${Number((data.metalData.buyingPrice * conversionRate).toFixed(2)).toLocaleString()} ${targetCurrency}`;
     const targetTroyOuncePrice = `${Number((data.metalData.troyOuncePrice * conversionRate).toFixed(2)).toLocaleString()} ${targetCurrency}`;
+    const targetGramPrice = `${Number(((data.metalData.troyOuncePrice / 31.1035) * conversionRate).toFixed(2)).toLocaleString()} ${targetCurrency}`;
 
 	return (<>
         <header className="p-8">
@@ -144,6 +146,10 @@ export default function ClientHome({ data }: {
                         <p className="text-2xl mb-0.5">{buyPrice}</p>
                         <p className="text-neutral-900">Buy price</p>
                     </div>
+                    <div className="p-4 rounded border inline-block">
+                        <p className="text-2xl mb-0.5">{gramPrice}</p>
+                        <p className="text-neutral-900">/ gram</p>
+                    </div>
                 </div>
                 <div className="flex flex-wrap flex-row gap-2 md:gap-4 mb-4">
                     <div className="p-4 rounded border inline-block">
@@ -157,6 +163,10 @@ export default function ClientHome({ data }: {
                     <div className="p-4 rounded border inline-block">
                         <p className="text-2xl mb-0.5">{targetBuyPrice}</p>
                         <p className="text-neutral-900">Translated buy price</p>
+                    </div>
+                    <div className="p-4 rounded border inline-block">
+                        <p className="text-2xl mb-0.5">{targetGramPrice}</p>
+                        <p className="text-neutral-900">Translated / gram</p>
                     </div>
                 </div>
                 <p className="text-xl mb-2">Exchange Rates</p>
