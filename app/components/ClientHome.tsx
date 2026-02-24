@@ -58,8 +58,8 @@ export default function ClientHome({
 					Gold Price and Currency Exchange Rates
 				</h1>
 			</header>
-			<main className="px-8 flex flex-nowrap gap-x-8 flex-col md:flex-row">
-				<section className="mb-8 md:w-1/2">
+			<main className="px-8 flex flex-nowrap gap-x-24 flex-col md:flex-row">
+				<section className="mb-8">
 					<header>
 						<h2 className="text-2xl mb-4">Filters</h2>
 					</header>
@@ -120,7 +120,7 @@ export default function ClientHome({
 						/>
 					</div>
 				</section>
-				<section className="md:w-1/2 pb-8">
+				<section className="pb-8">
 					<header>
 						<h2 className="text-2xl mb-4">Data</h2>
 					</header>
