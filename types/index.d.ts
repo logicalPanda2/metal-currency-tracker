@@ -20,26 +20,26 @@ interface CurrencyExchangeData {
 }
 
 interface MetalAndExchangeData {
-    metalData: PreciousMetalData,
-    currencyExchangePairData: CurrencyExchangePairData,
+	metalData: PreciousMetalData;
+	currencyExchangePairData: CurrencyExchangePairData;
 }
 
 interface ButtonProps {
-    textContent: string,
-    styles?: string,
-    onClick: (...args: any[]) => any,
+	textContent: string;
+	styles?: string;
+	onClick: (...args: any[]) => any;
 }
 
 interface TextInputProps {
-    name: string,
-    id: string,
-    value: string,
-    onChange: (...args: any[]) => any,
-    styles?: string,
+	name: string;
+	id: string;
+	value: string;
+	onChange: (...args: any[]) => any;
+	styles?: string;
 }
 
 interface CardProps {
-    accentedMainText: string,
-    mainText: string,
-    subText: string,
+	accentedMainText: string;
+	mainText: string;
+	subText: string;
 }

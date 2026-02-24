@@ -10,7 +10,7 @@ type PreciousMetalAPICurrencyCode = "USD";
 type PreciousMetalAPIMetalCode = "XAU" | "XAG" | "XPT" | "XPD";
 
 interface PreciousMetalAPIResponse {
-    metal: PreciousMetalAPIMetalCode;
+	metal: PreciousMetalAPIMetalCode;
 	currency: PreciousMetalAPICurrencyCode;
 	price: number;
 	ask: number;
@@ -20,12 +20,12 @@ interface PreciousMetalAPIResponse {
 type CurrencyAPICurrencyCode = "USD" | "AUD" | "EUR";
 
 interface CurrencyAPIResponse {
-    base_code: CurrencyAPICurrencyCode,
-    conversion_rates: Record<CurrencyAPICurrencyCode, number>,
+	base_code: CurrencyAPICurrencyCode;
+	conversion_rates: Record<CurrencyAPICurrencyCode, number>;
 }
 
 interface CurrencyAPIPairResponse {
-    base_code: CurrencyAPICurrencyCode,
-    target_code: CurrencyAPICurrencyCode,
-    conversion_rate: number,
+	base_code: CurrencyAPICurrencyCode;
+	target_code: CurrencyAPICurrencyCode;
+	conversion_rate: number;
 }
