@@ -39,6 +39,7 @@ interface TextInputProps {
 }
 
 interface CardProps {
+    accentedMainText: string,
     mainText: string,
     subText: string,
 }

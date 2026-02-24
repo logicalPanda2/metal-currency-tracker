@@ -35,10 +35,10 @@ export default function ClientHome({ data }: {
         .toLowerCase()
         .slice(1); // capitalize the first letter, concatenate subsequent lowercase characters
     const currency = data.metalData.currency;
-    const sellPrice = `$${Number(data.metalData.sellingPrice.toFixed(2)).toLocaleString()} ${currency}`;
-    const buyPrice = `$${Number(data.metalData.buyingPrice.toFixed(2)).toLocaleString()} ${currency}`;
-    const troyOuncePrice = `$${Number(data.metalData.troyOuncePrice.toFixed(2)).toLocaleString()} ${currency}`;
-    const gramPrice = `$${Number((data.metalData.troyOuncePrice / 31.1035).toFixed(2)).toLocaleString()} ${currency}`;
+    const sellPrice = `$${Number(data.metalData.sellingPrice.toFixed(2)).toLocaleString()}`;
+    const buyPrice = `$${Number(data.metalData.buyingPrice.toFixed(2)).toLocaleString()}`;
+    const troyOuncePrice = `$${Number(data.metalData.troyOuncePrice.toFixed(2)).toLocaleString()}`;
+    const gramPrice = `$${Number((data.metalData.troyOuncePrice / 31.1035).toFixed(2)).toLocaleString()}`;
 
     const baseCurrency = data.currencyExchangePairData.base;
     const targetCurrency = data.currencyExchangePairData.target;
@@ -46,10 +46,10 @@ export default function ClientHome({ data }: {
     const aggregate = `1 ${baseCurrency} = ${Number(conversionRate.toFixed(2)).toLocaleString()} ${targetCurrency}`;
     const reversedBaseAggregate = `1 ${targetCurrency} = ${Number((1 / conversionRate).toFixed(2)).toLocaleString()} ${baseCurrency}`;
     
-    const targetSellPrice = `${Number((data.metalData.sellingPrice * conversionRate).toFixed(2)).toLocaleString()} ${targetCurrency}`;
-    const targetBuyPrice = `${Number((data.metalData.buyingPrice * conversionRate).toFixed(2)).toLocaleString()} ${targetCurrency}`;
-    const targetTroyOuncePrice = `${Number((data.metalData.troyOuncePrice * conversionRate).toFixed(2)).toLocaleString()} ${targetCurrency}`;
-    const targetGramPrice = `${Number(((data.metalData.troyOuncePrice / 31.1035) * conversionRate).toFixed(2)).toLocaleString()} ${targetCurrency}`;
+    const targetSellPrice = `${Number((data.metalData.sellingPrice * conversionRate).toFixed(2)).toLocaleString()}`;
+    const targetBuyPrice = `${Number((data.metalData.buyingPrice * conversionRate).toFixed(2)).toLocaleString()}`;
+    const targetTroyOuncePrice = `${Number((data.metalData.troyOuncePrice * conversionRate).toFixed(2)).toLocaleString()}`;
+    const targetGramPrice = `${Number(((data.metalData.troyOuncePrice / 31.1035) * conversionRate).toFixed(2)).toLocaleString()}`;
 
 	return (<>
         <header className="p-8">
@@ -99,16 +99,16 @@ export default function ClientHome({ data }: {
                 </header>
                 <p className="text-xl mb-2">{metal} Prices</p>
                 <div className="flex flex-wrap flex-row gap-2 md:gap-4 mb-4">
-                    <Card mainText={troyOuncePrice} subText="/ oz t" />
-                    <Card mainText={sellPrice} subText="Sell price" />
-                    <Card mainText={buyPrice} subText="Buy price" />
-                    <Card mainText={gramPrice} subText="/ gram" />
+                    <Card accentedMainText={troyOuncePrice} mainText={currency} subText="/ oz t" />
+                    <Card accentedMainText={sellPrice} mainText={currency} subText="Sell price" />
+                    <Card accentedMainText={buyPrice} mainText={currency} subText="Buy price" />
+                    <Card accentedMainText={gramPrice} mainText={currency} subText="/ gram" />
                 </div>
                 <div className="flex flex-wrap flex-row gap-2 md:gap-4 mb-4">
-                    <Card mainText={targetTroyOuncePrice} subText="Translated / oz t" />
-                    <Card mainText={targetSellPrice} subText="Translated sell price" />
-                    <Card mainText={targetBuyPrice} subText="Translated buy price" />
-                    <Card mainText={targetGramPrice} subText="Translated / gram" />
+                    <Card accentedMainText={targetTroyOuncePrice} mainText={targetCurrency} subText="Translated / oz t" />
+                    <Card accentedMainText={targetSellPrice} mainText={targetCurrency} subText="Translated sell price" />
+                    <Card accentedMainText={targetBuyPrice} mainText={targetCurrency} subText="Translated buy price" />
+                    <Card accentedMainText={targetGramPrice} mainText={targetCurrency} subText="Translated / gram" />
                 </div>
                 <p className="text-xl mb-2">Exchange Rates</p>
                 <p className="text-2xl mb-2">{aggregate}</p>
