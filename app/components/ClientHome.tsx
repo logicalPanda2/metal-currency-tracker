@@ -50,40 +50,48 @@ export default function ClientHome({ data }: {
                 <header>
                     <h2 className="text-2xl mb-4">Filters</h2>
                 </header>
-                <button 
-                    onClick={() => setSearchParam("metal", "XAU")}
-                    className="px-3 py-1 border rounded mr-1"
-                >
-                    Gold
-                </button>
-                <button 
-                    onClick={() => setSearchParam("metal", "XAG")}
-                    className="px-3 py-1 border rounded mx-1"
-                >
-                    Silver
-                </button>
-                <button 
-                    onClick={() => setSearchParam("metal", "XPT")}
-                    className="px-3 py-1 border rounded mx-1"
-                >
-                    Platinum
-                </button>
-                <button 
-                    onClick={() => setSearchParam("metal", "XPD")}
-                    className="px-3 py-1 border rounded mx-1"
-                >
-                    Palladium
-                </button>
-                <div className="mt-2">
-                    <label htmlFor="baseInput">BASE: </label>
-                    <input
-                        type="text"
-                        name="base"
-                        id="baseInput"
-                        value={base}
-                        onChange={(e) => setBase(e.target.value)}
-                        className="mx-1 py-1 px-2 border rounded"
-                    />
+                <div className="flex flex-nowrap flex-col gap-2 md:gap-4 md:flex-row">
+                    <div className="flex flex-nowrap flex-row gap-2 md:gap-4">
+                        <button 
+                            onClick={() => setSearchParam("metal", "XAU")}
+                            className="px-3 py-1 border rounded"
+                        >
+                            Gold
+                        </button>
+                        <button 
+                            onClick={() => setSearchParam("metal", "XAG")}
+                            className="px-3 py-1 border rounded"
+                        >
+                            Silver
+                        </button>
+                    </div>
+                    <div className="flex flex-nowrap flex-row gap-2 md:gap-4">
+                        <button 
+                            onClick={() => setSearchParam("metal", "XPT")}
+                            className="px-3 py-1 border rounded"
+                        >
+                            Platinum
+                        </button>
+                        <button 
+                            onClick={() => setSearchParam("metal", "XPD")}
+                            className="px-3 py-1 border rounded"
+                        >
+                            Palladium
+                        </button>
+                    </div>
+                </div>
+                <div className="mt-2 flex flex-nowrap flex-row items-end">
+                    <div className="flex flex-nowrap flex-col">
+                        <label htmlFor="baseInput">BASE: </label>
+                        <input
+                            type="text"
+                            name="base"
+                            id="baseInput"
+                            value={base}
+                            onChange={(e) => setBase(e.target.value)}
+                            className="mx-1 py-1 px-2 border rounded mt-1"
+                        />
+                    </div>
                     <button 
                         onClick={() => setSearchParam("base", base)}
                         className="px-3 py-1 border rounded mx-1"
@@ -91,16 +99,18 @@ export default function ClientHome({ data }: {
                         Set
                     </button>
                 </div>
-                <div className="mt-2">
-                    <label htmlFor="targetInput">TARGET: </label>
-                    <input
-                        type="text"
-                        name="target"
-                        id="targetInput"
-                        value={target}
-                        onChange={(e) => setTarget(e.target.value)}
-                        className="mx-1 py-1 px-2 border rounded"
-                    />
+                <div className="mt-2 flex flex-nowrap flex-row items-end">
+                    <div className="flex flex-nowrap flex-col">
+                        <label htmlFor="targetInput">TARGET: </label>
+                        <input
+                            type="text"
+                            name="target"
+                            id="targetInput"
+                            value={target}
+                            onChange={(e) => setTarget(e.target.value)}
+                            className="mx-1 py-1 px-2 border rounded mt-1"
+                        />
+                    </div>
                     <button 
                         onClick={() => setSearchParam("target", target)}
                         className="px-3 py-1 border rounded mx-1"
